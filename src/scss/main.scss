@@ -1,28 +1,8 @@
-//font
-@font-face {
-    font-family: "Montserrat";
-    font-style: "normal";
-    font-weight: 400;
-    src: url("/font/Montserrat-Regular.woff2") format("woff2"), url("/font/Montserrat-Regular.woff") format("woff"), url("/font/Montserrat-Regular.ttf") format("truetype"), url("/font/Montserrat-Regular.svg#svgFontName") format("svg");
-}
-@font-face {
-    font-family: "Montserrat";
-    font-style: "normal";
-    font-weight: 700;
-    src: url("/font/Montserrat-Bold.woff2") format("woff2"), url("/font/Montserrat-Bold.woff") format("woff"), url("/font/Montserrat-Bold.ttf") format("truetype"), url("/font/Montserrat-Bold.svg#svgFontName") format("svg");
-}
-@font-face {
-    font-family: "Pretendard";
-    font-style: "normal";
-    font-weight: 400;
-    src: url("/font/Pretendard-Regular.woff2") format("woff2"), url("/font/Pretendard-Regular.woff") format("woff"), url("/font/Pretendard-Regular.ttf") format("truetype"), url("/font/Pretendard-Regular.svg#svgFontName") format("svg");
-}
-@font-face {
-    font-family: "Pretendard";
-    font-style: "normal";
-    font-weight: 700;
-    src: url("/font/Pretendard-Bold.woff2") format("woff2"), url("/font/Pretendard-Bold.woff") format("woff"), url("/font/Pretendard-Bold.ttf") format("truetype"), url("/font/Pretendard-Bold.svg#svgFontName") format("svg");
-}
+@charset 'UTF-8';
+
+@import "_font";
+@import "_var";
+@import "_mixins";
 
 // common
 body{
@@ -59,20 +39,14 @@ button{
     margin:0;
 }
 
-// mixin
-@mixin flex-row{
-    display:flex;
-    flex-direction:row;
-}
-@mixin flex-column{
-    display:flex;
-    flex-direction:column;
-}
-.flex_row{
-    @include flex-row;
-}
-.flex_column{
-    @include flex-column;
+
+.hidden{
+    width:1px;
+    height:1px;
+    position:absolute;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0 0 0 0);
 }
 
 
@@ -108,11 +82,9 @@ button{
     }
 }
 
-main{
-    width:100%;
-}
 .main_contents{
     width:100%;
+    margin-top:-80px;
     .title_h1{
         font-size:68px;
         font-weight:bold;
@@ -127,11 +99,11 @@ main{
 }
 .intro{
     width:100%;
-    min-height:calc(100vh - 80px);
+    min-height:100vh;
     padding:80px;
     box-sizing:border-box;
     background:#FEFEFE;
-    @include flex-row;
+    @include flex-row(center, start);
     .title_h1{
         flex:1;
         margin-top:auto;
@@ -139,11 +111,19 @@ main{
     }
     .right_side{
         flex:1;
+        height:calc(100vh - 160px);
         @include flex-column;
         .year{
-            position:absolute;
+            
+        }
+        .text_identity{
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            font-size: 24px;
         }
         .flex_row{
+            width:100%;
             margin-top:auto;
             > div{
                 flex:1;
@@ -164,6 +144,30 @@ main{
     width:100%;
     min-height:100vh;
     background:#efefef;
+    padding:80px;
+    box-sizing:border-box;
+    @include flex-row;
+    .left_side{
+        flex:1;
+    }
+    .right_side{
+        flex:1;
+        dl{
+            @include flex-row($wrap:wrap);
+            > div{
+                flex:1 0 50%;
+            }
+            dt{
+                font-weight: 700;
+                font-size: 18px;
+            }
+            dd{
+                font-size: 18px;
+                margin-top: 16px;
+                line-height: 32px;
+            }
+        }
+    }
 }
 .works{
     width:100%;
@@ -193,4 +197,5 @@ main{
 .footer{
     width:100%;
     height:40px;
+    text-align:center;
 }

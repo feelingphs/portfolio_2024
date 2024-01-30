@@ -8,9 +8,10 @@
     @content;
 }
 
-@mixin flex-row($align:center, $justify: center) {
+@mixin flex-row($align:center, $justify: center, $wrap:wrap) {
     display:flex;
     flex-direction:row;
+    flex-wrap:$wrap;
 
     @if ($align == start) {
         align-items:flex-start;
@@ -33,9 +34,10 @@
     }
 }
 
-@mixin flex-column($align:center, $justify: center) {
+@mixin flex-column($align:center, $justify: center, $wrap:wrap) {
     display:flex;
     flex-direction:column;
+    flex-wrap:$wrap;
 
     @if ($align == start) {
         align-items:flex-start;

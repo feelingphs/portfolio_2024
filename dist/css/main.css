@@ -62,14 +62,13 @@ button {
   margin: 0;
 }
 
-.flex_row {
-  display: flex;
-  flex-direction: row;
-}
-
-.flex_column {
-  display: flex;
-  flex-direction: column;
+.hidden {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 }
 
 .header {
@@ -97,12 +96,9 @@ button {
   box-sizing: border-box;
 }
 
-main {
-  width: 100%;
-}
-
 .main_contents {
   width: 100%;
+  margin-top: -80px;
 }
 .main_contents .title_h1 {
   font-size: 68px;
@@ -118,12 +114,15 @@ main {
 
 .intro {
   width: 100%;
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   padding: 80px;
   box-sizing: border-box;
   background: #FEFEFE;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
 }
 .intro .title_h1 {
   flex: 1;
@@ -132,13 +131,21 @@ main {
 }
 .intro .right_side {
   flex: 1;
+  height: calc(100vh - 160px);
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
-.intro .right_side .year {
+.intro .right_side .text_identity {
   position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 24px;
 }
 .intro .right_side .flex_row {
+  width: 100%;
   margin-top: auto;
 }
 .intro .right_side .flex_row > div {
@@ -158,6 +165,38 @@ main {
   width: 100%;
   min-height: 100vh;
   background: #efefef;
+  padding: 80px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.profile .left_side {
+  flex: 1;
+}
+.profile .right_side {
+  flex: 1;
+}
+.profile .right_side dl {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.profile .right_side dl > div {
+  flex: 1 0 50%;
+}
+.profile .right_side dl dt {
+  font-weight: 700;
+  font-size: 18px;
+}
+.profile .right_side dl dd {
+  font-size: 18px;
+  margin-top: 16px;
+  line-height: 32px;
 }
 
 .works {
@@ -170,6 +209,9 @@ main {
   width: 100%;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 40px;
   flex-wrap: nowrap;
 }
@@ -188,4 +230,5 @@ main {
 .footer {
   width: 100%;
   height: 40px;
+  text-align: center;
 }/*# sourceMappingURL=main.css.map */
