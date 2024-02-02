@@ -125,6 +125,7 @@ button{
         .flex_row{
             width:100%;
             margin-top:auto;
+            @include flex-row(start);
             > div{
                 flex:1;
             }
@@ -146,16 +147,18 @@ button{
     background:#efefef;
     padding:80px;
     box-sizing:border-box;
-    @include flex-row;
+    @include flex-row(start);
     .left_side{
         flex:1;
     }
     .right_side{
         flex:1;
         dl{
-            @include flex-row($wrap:wrap);
+            @include flex-row(start, center, wrap){
+                gap:40px;
+            };
             > div{
-                flex:1 0 50%;
+                flex:1 0 calc(50% - 20px);
             }
             dt{
                 font-weight: 700;
@@ -176,9 +179,8 @@ button{
     box-sizing:border-box;
     &_list{
         width:100%;
-        @include flex-row;
+        @include flex-row(center, start);
         gap:40px;
-        flex-wrap:nowrap;
     }
     &_item{
         width:40vw;

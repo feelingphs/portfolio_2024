@@ -105,12 +105,24 @@
                 <p class="title_h2">수행한 프로젝트입니다.</p>
                 <p class="description">작업물</p>
                 <ul class="works_list">
-                    <li class="works_item"></li>
-                    <li class="works_item"></li>
-                    <li class="works_item"></li>
-                    <li class="works_item"></li>
-                    <li class="works_item"></li>
-                    <li class="works_item"></li>
+                    <li class="works_item">
+                        <a href="#none;"></a>
+                    </li>
+                    <li class="works_item">
+                        <a href="#none;"></a>
+                    </li>
+                    <li class="works_item">
+                        <a href="#none;"></a>
+                    </li>
+                    <li class="works_item">
+                        <a href="#none;"></a>
+                    </li>
+                    <li class="works_item">
+                        <a href="#none;"></a>
+                    </li>
+                    <li class="works_item">
+                        <a href="#none;"></a>
+                    </li>
                 </ul>
             </section>
         </div>
@@ -119,5 +131,37 @@
             Copyrights 2024 Sun all rights reserved.
         </footer>
     </main>
+
+    <script src="/src/js/libs/gsap.min.js"></script>
+    <script src="/src/js/libs/ScrollTrigger.min.js"></script>
+    <script src="/src/js/libs/ScrollToPlugin.min.js"></script>
+    <script>
+        const horizontalBox = document.querySelector(".works");
+
+        let items = gsap.utils.toArray(".works_list"),
+        pageWrapper = document.querySelector(".page-wrapper");
+
+        items.forEach((container, i) => {
+            let localItems = container.querySelectorAll(".works_item"),
+            distance = () => {
+                let lastItemBounds = localItems[localItems.length-1].getBoundingClientRect(),
+                    containerBounds = container.getBoundingClientRect();
+                return Math.max(0, lastItemBounds.right - containerBounds.right);
+            };
+            gsap.to(horizontalBox, {
+                //x: () => -distance(), // make sure it dynamically calculates things so that it adjusts to resizes
+                ease: "none",
+                scrollTrigger: {
+                trigger: horizontalBox,
+                start: "top top",
+                //pinnedContainer: pageWrapper,
+                //end: () => "+=" + distance(),
+                //pin: pageWrapper,
+                scrub: true,
+                invalidateOnRefresh: true // will recalculate any function-based tween values on resize/refresh (making it responsive)
+                }
+            })
+        });
+    </script>
 </body>
 </html>

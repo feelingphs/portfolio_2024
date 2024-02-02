@@ -8,7 +8,7 @@
     @content;
 }
 
-@mixin flex-row($align:center, $justify: center, $wrap:wrap) {
+@mixin flex-row($align:center, $justify: center, $wrap:nowrap) {
     display:flex;
     flex-direction:row;
     flex-wrap:$wrap;
@@ -32,9 +32,11 @@
     } @else if ($justify == center) {
         justify-content:center;
     }
+
+    @content;
 }
 
-@mixin flex-column($align:center, $justify: center, $wrap:wrap) {
+@mixin flex-column($align:center, $justify: center, $wrap:nowrap) {
     display:flex;
     flex-direction:column;
     flex-wrap:$wrap;
@@ -56,6 +58,8 @@
     } @else if ($justify == center) {
         justify-content:center;
     }
+
+    @content;
 }
 
 @mixin ellipsis($lines: 1) {
