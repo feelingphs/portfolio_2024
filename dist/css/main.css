@@ -28,7 +28,6 @@ body {
   font-family: "Montserrat", "Pretendard";
   color: #333;
   width: 100%;
-  max-width: 1920px;
   overflow-x: hidden;
 }
 
@@ -60,6 +59,10 @@ button {
   border: 0;
   padding: 0;
   margin: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 .hidden {
@@ -100,6 +103,9 @@ button {
   width: 100%;
   margin-top: -80px;
 }
+.main_contents h2 {
+  margin-bottom: 24px;
+}
 .main_contents .title_h1 {
   font-size: 68px;
   font-weight: bold;
@@ -126,8 +132,7 @@ button {
 }
 .intro .title_h1 {
   flex: 1;
-  margin-top: auto;
-  margin-bottom: 15%;
+  margin: auto;
 }
 .intro .right_side {
   flex: 1;
@@ -135,7 +140,7 @@ button {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 .intro .right_side .text_identity {
@@ -143,6 +148,9 @@ button {
   top: 50%;
   transform: translate(0, -50%);
   font-size: 24px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.5;
 }
 .intro .right_side .flex_row {
   width: 100%;
@@ -165,6 +173,12 @@ button {
   margin-top: 16px;
   line-height: 32px;
 }
+.intro .right_side .flex_row dd a {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+  line-height: 32px;
+}
 
 .profile {
   width: 100%;
@@ -184,7 +198,7 @@ button {
 .profile .right_side {
   flex: 1;
 }
-.profile .right_side dl {
+.profile dl {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -192,17 +206,24 @@ button {
   justify-content: center;
   gap: 40px;
 }
-.profile .right_side dl > div {
+.profile dl > div {
   flex: 1 0 calc(50% - 20px);
 }
-.profile .right_side dl dt {
+.profile dl dt {
   font-weight: 700;
   font-size: 18px;
 }
-.profile .right_side dl dd {
+.profile dl dd {
   font-size: 18px;
   margin-top: 16px;
   line-height: 32px;
+}
+.profile dl dd span {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ddd;
+  line-height: 1.5;
 }
 
 .works {
@@ -219,6 +240,8 @@ button {
   align-items: center;
   justify-content: flex-start;
   gap: 40px;
+  margin-top: 40px;
+  margin-left: 100px;
 }
 .works_item {
   width: 40vw;
@@ -230,6 +253,34 @@ button {
 }
 .works_item:nth-child(odd) {
   background: #ccc;
+}
+.works_item a {
+  display: block;
+}
+.works .tab_list {
+  margin-top: 40px;
+}
+.works .tab_list .tab_item {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid #000;
+  border-radius: 30px;
+}
+.works .tab_list .tab_item a {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.5;
+}
+.works .tab_list .tab_item.active {
+  background: #000;
+}
+.works .tab_list .tab_item.active a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.5;
 }
 
 .footer {

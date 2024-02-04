@@ -26,7 +26,7 @@
                 <h1 class="title_h1">Publisher<span>Park, Hye-Sun</span></h1>
                 <div class="right_side">
                     <p class="year">2024 Portfolio</p>
-                    <p>욕심많은 퍼블리셔</p>
+                    <p class="text_identity">욕심많은 퍼블리셔</p>
                     <dl class="flex_row">
                         <div>
                             <dt>FOCUS</dt>
@@ -34,19 +34,23 @@
                         </div>
                         <div>
                             <dt>CONTACT</dt>
-                            <dd>liebe_0208@naver.com</dd>
+                            <dd><a href="mailto:liebe_0208@naver.com">liebe_0208@naver.com</a></dd>
                         </div>
                     </dl>
                 </div>
             </section>
             <section class="profile">
                 <div class="left_side">
-                    <h2>profile</h2>
+                    <h2>Profile</h2>
                     <p class="title_h2">안녕하세요.<br>퍼블리셔 박혜선입니다.</p>
                     <dl>
                         <div>
                             <dt>Persnal Info</dt>
-                            <dd></dd>
+                            <dd>
+                                <ul>
+                                    <li>서울시 광진구</li>
+                                </ul>
+                            </dd>
                         </div>
                     </dl>
                 </div>
@@ -54,7 +58,7 @@
                     <dl>
                         <div>
                             <dt>Education</dt>
-                            <dd>학원 퍼블리셔<span>2016.12 - 2017.6</span></dd>
+                            <dd>학원 퍼블리셔<span>2016.12 - 2017.6 (6개월)</span></dd>
                         </div>
                         <div>
                             <dt>Certificate</dt>
@@ -101,9 +105,19 @@
                 </div>
             </section>
             <section class="works">
-                <h2>projects</h2>
-                <p class="title_h2">수행한 프로젝트입니다.</p>
-                <p class="description">작업물</p>
+                <h2>Works</h2>
+                <p class="title_h2">작업한 프로젝트입니다.</p>
+                <ul class="tab_list">
+                    <li class="tab_item active">
+                        <a href="">Projects</a>
+                    </li>
+                    <li class="tab_item">
+                        <a href="">개인작업물</a>
+                    </li>
+                </ul>
+                <div class="tab_pannel">
+
+                </div>
                 <ul class="works_list">
                     <li class="works_item">
                         <a href="#none;"></a>
@@ -138,8 +152,7 @@
     <script>
         const horizontalBox = document.querySelector(".works");
 
-        let items = gsap.utils.toArray(".works_list"),
-        pageWrapper = document.querySelector(".page-wrapper");
+        let items = gsap.utils.toArray(".works_list")
 
         items.forEach((container, i) => {
             let localItems = container.querySelectorAll(".works_item"),
@@ -149,16 +162,16 @@
                 return Math.max(0, lastItemBounds.right - containerBounds.right);
             };
             gsap.to(horizontalBox, {
-                //x: () => -distance(), // make sure it dynamically calculates things so that it adjusts to resizes
+                x: () => -distance(),
                 ease: "none",
                 scrollTrigger: {
-                trigger: horizontalBox,
-                start: "top top",
-                //pinnedContainer: pageWrapper,
-                //end: () => "+=" + distance(),
-                //pin: pageWrapper,
-                scrub: true,
-                invalidateOnRefresh: true // will recalculate any function-based tween values on resize/refresh (making it responsive)
+                    trigger: horizontalBox,
+                    start: "top top",
+                    pinnedContainer: horizontalBox,
+                    end: () => "+=" + distance(),
+                    pin: horizontalBox,
+                    scrub: true,
+                    invalidateOnRefresh: true
                 }
             })
         });

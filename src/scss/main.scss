@@ -11,7 +11,7 @@ body{
     font-family:'Montserrat', 'Pretendard';
     color:#333;
     width:100%;
-    max-width:1920px;
+    //min-width:1920px;
     overflow-x:hidden;
 }
 h1, h2, h3, h4, h5, h6{
@@ -37,6 +37,9 @@ button{
     border:0;
     padding:0;
     margin:0;
+}
+a{
+    text-decoration:none;
 }
 
 
@@ -85,6 +88,9 @@ button{
 .main_contents{
     width:100%;
     margin-top:-80px;
+    h2{
+        margin-bottom:24px;
+    }
     .title_h1{
         font-size:68px;
         font-weight:bold;
@@ -106,13 +112,12 @@ button{
     @include flex-row(center, start);
     .title_h1{
         flex:1;
-        margin-top:auto;
-        margin-bottom:15%;
+        margin:auto;
     }
     .right_side{
         flex:1;
         height:calc(100vh - 160px);
-        @include flex-column;
+        @include flex-column(start);
         .year{
             
         }
@@ -120,7 +125,7 @@ button{
             position: absolute;
             top: 50%;
             transform: translate(0, -50%);
-            font-size: 24px;
+            @include font(24px, 400, $black, 1.5);
         }
         .flex_row{
             width:100%;
@@ -137,6 +142,9 @@ button{
                 font-size:18px;
                 margin-top:16px;
                 line-height:32px;
+                a{
+                    @include font(18px, 400, $black, 32px);
+                }
             }
         }
     }
@@ -153,21 +161,25 @@ button{
     }
     .right_side{
         flex:1;
-        dl{
-            @include flex-row(start, center, wrap){
-                gap:40px;
-            };
-            > div{
-                flex:1 0 calc(50% - 20px);
-            }
-            dt{
-                font-weight: 700;
-                font-size: 18px;
-            }
-            dd{
-                font-size: 18px;
-                margin-top: 16px;
-                line-height: 32px;
+    }
+    dl{
+        @include flex-row(start, center, wrap){
+            gap:40px;
+        };
+        > div{
+            flex:1 0 calc(50% - 20px);
+        }
+        dt{
+            font-weight: 700;
+            font-size: 18px;
+        }
+        dd{
+            font-size: 18px;
+            margin-top: 16px;
+            line-height: 32px;
+            span{
+                display:block;
+                @include font(14px, 400, $gray02, 1.5);
             }
         }
     }
@@ -181,6 +193,8 @@ button{
         width:100%;
         @include flex-row(center, start);
         gap:40px;
+        margin-top:40px;
+        margin-left:100px;
     }
     &_item{
         width:40vw;
@@ -191,6 +205,28 @@ button{
         }
         &:nth-child(odd){
             background:#ccc;
+        }
+        a{
+            display:block;
+        }
+    }
+    .tab_list{
+        margin-top:40px;
+        .tab_item{
+            display:inline-block;
+            padding:4px 12px;
+            border:1px solid $black;
+            border-radius:30px;
+            a{
+                display:block;
+                @include font(16px, 400, $black, 1.5);
+            }
+            &.active{
+                background:$black;
+                a{
+                    @include font(16px, 400, $white, 1.5);
+                }
+            }
         }
     }
 }
