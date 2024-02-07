@@ -114,15 +114,19 @@ a {
   display: block;
 }
 .main_contents .title_h2 {
-  font-size: 48px;
-  font-weight: bold;
+  font-size: 40px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.5;
 }
-
-.intro {
+.main_contents > section {
   width: 100%;
   min-height: 100vh;
   padding: 80px;
   box-sizing: border-box;
+}
+
+.intro {
   background: #FEFEFE;
   display: flex;
   flex-direction: row;
@@ -181,11 +185,7 @@ a {
 }
 
 .profile {
-  width: 100%;
-  min-height: 100vh;
   background: #efefef;
-  padding: 80px;
-  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -193,10 +193,10 @@ a {
   justify-content: center;
 }
 .profile .left_side {
-  flex: 1;
+  flex: 1 0 45%;
 }
 .profile .right_side {
-  flex: 1;
+  flex: 1 0 55%;
 }
 .profile dl {
   display: flex;
@@ -226,12 +226,6 @@ a {
   line-height: 1.5;
 }
 
-.works {
-  width: 100%;
-  min-height: 100vh;
-  padding: 80px;
-  box-sizing: border-box;
-}
 .works_list {
   width: 100%;
   display: flex;
@@ -256,31 +250,8 @@ a {
 }
 .works_item a {
   display: block;
-}
-.works .tab_list {
-  margin-top: 40px;
-}
-.works .tab_list .tab_item {
-  display: inline-block;
-  padding: 4px 12px;
-  border: 1px solid #000;
-  border-radius: 30px;
-}
-.works .tab_list .tab_item a {
-  display: block;
-  font-size: 16px;
-  font-weight: 400;
-  color: #000;
-  line-height: 1.5;
-}
-.works .tab_list .tab_item.active {
-  background: #000;
-}
-.works .tab_list .tab_item.active a {
-  font-size: 16px;
-  font-weight: 400;
-  color: #fff;
-  line-height: 1.5;
+  width: 100%;
+  height: 100%;
 }
 
 .footer {
