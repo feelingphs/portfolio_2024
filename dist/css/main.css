@@ -204,10 +204,10 @@ a {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
-  gap: 40px;
+  gap: 40px 80px;
 }
 .profile dl > div {
-  flex: 1 0 calc(50% - 20px);
+  flex: 1 0 calc(50% - 40px);
 }
 .profile dl dt {
   font-weight: 700;
@@ -217,13 +217,27 @@ a {
   font-size: 18px;
   margin-top: 16px;
   line-height: 32px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
 .profile dl dd span {
-  display: block;
   font-size: 14px;
   font-weight: 400;
   color: #ddd;
   line-height: 1.5;
+}
+.profile ul {
+  width: 100%;
+}
+.profile ul li {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .works_list {

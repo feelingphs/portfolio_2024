@@ -164,10 +164,10 @@ a{
     }
     dl{
         @include flex-row(start, center, wrap){
-            gap:40px;
+            gap:40px 80px;
         };
         > div{
-            flex:1 0 calc(50% - 20px);
+            flex:1 0 calc(50% - 40px);
         }
         dt{
             font-weight: 700;
@@ -177,10 +177,16 @@ a{
             font-size: 18px;
             margin-top: 16px;
             line-height: 32px;
+            @include flex-row(center, between, wrap);
             span{
-                display:block;
                 @include font(14px, 400, $gray02, 1.5);
             }
+        }
+    }
+    ul{
+        width:100%;
+        li{
+            @include flex-row(center, between, wrap);
         }
     }
 }
