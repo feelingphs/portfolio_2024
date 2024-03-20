@@ -9,7 +9,8 @@ body{
     margin:0;
     padding:0;
     font-family:'Montserrat', 'Pretendard';
-    color:#333;
+    line-height:1.5;
+    color:$white;
     width:100%;
     //min-width:1920px;
     overflow-x:hidden;
@@ -99,13 +100,14 @@ a{
         }
     }
     .title_h2{
-        @include font(40px, 700, $black, 1.5);
+        @include font(40px, 700, $white, 1.5);
     }
     > section{
         width:100%;
         min-height:100vh;
         padding:80px;
         box-sizing:border-box;
+        background:$black;
     }
 }
 .intro{
@@ -126,7 +128,7 @@ a{
             position: absolute;
             top: 50%;
             transform: translate(0, -50%);
-            @include font(24px, 400, $black, 1.5);
+            @include font(24px, 400, $white, 1.5);
         }
         .flex_row{
             width:100%;
@@ -144,16 +146,37 @@ a{
                 margin-top:16px;
                 line-height:32px;
                 a{
-                    @include font(18px, 400, $black, 32px);
+                    @include font(18px, 400, $white, 32px);
                 }
             }
         }
     }
 }
-.overview{
-    
+.about{
+    background:#efefef;
+    @include flex-row(start);
+    .left_side{
+        flex:1 0 45%;
+    }
+    .right_side{
+        flex:1 0 55%;
+    }
+    .type{
+        div{
+            + div{
+                margin-top:56px;
+            }
+        }
+        dt{
+            @include font(24px, 700, $white, 1);
+            margin-bottom:32px;
+        }
+        dd{
+
+        }
+    }
 }
-.profile{
+.resume{
     background:#efefef;
     @include flex-row(start);
     .left_side{

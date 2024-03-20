@@ -2,31 +2,32 @@
   font-family: "Montserrat";
   font-style: "normal";
   font-weight: 400;
-  src: url("/font/Montserrat-Regular.woff2") format("woff2"), url("/font/Montserrat-Regular.woff") format("woff"), url("/font/Montserrat-Regular.ttf") format("truetype"), url("/font/Montserrat-Regular.svg#svgFontName") format("svg");
+  src: url("../../src/font/Montserrat-Regular.woff2") format("woff2"), url("../../src/font/Montserrat-Regular.woff") format("woff"), url("../../src/font/Montserrat-Regular.ttf") format("truetype"), url("../../src/font/Montserrat-Regular.svg#svgFontName") format("svg");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: "normal";
   font-weight: 700;
-  src: url("/font/Montserrat-Bold.woff2") format("woff2"), url("/font/Montserrat-Bold.woff") format("woff"), url("/font/Montserrat-Bold.ttf") format("truetype"), url("/font/Montserrat-Bold.svg#svgFontName") format("svg");
+  src: url("../../src/font/Montserrat-Bold.woff2") format("woff2"), url("../../src/font/Montserrat-Bold.woff") format("woff"), url("../../src/font/Montserrat-Bold.ttf") format("truetype"), url("../../src/font/Montserrat-Bold.svg#svgFontName") format("svg");
 }
 @font-face {
   font-family: "Pretendard";
   font-style: "normal";
   font-weight: 400;
-  src: url("/font/Pretendard-Regular.woff2") format("woff2"), url("/font/Pretendard-Regular.woff") format("woff"), url("/font/Pretendard-Regular.ttf") format("truetype"), url("/font/Pretendard-Regular.svg#svgFontName") format("svg");
+  src: url("../../src/font/Pretendard-Regular.woff2") format("woff2"), url("../../src/font/Pretendard-Regular.woff") format("woff"), url("../../src/font/Pretendard-Regular.ttf") format("truetype"), url("../../src/font/Pretendard-Regular.svg#svgFontName") format("svg");
 }
 @font-face {
   font-family: "Pretendard";
   font-style: "normal";
   font-weight: 700;
-  src: url("/font/Pretendard-Bold.woff2") format("woff2"), url("/font/Pretendard-Bold.woff") format("woff"), url("/font/Pretendard-Bold.ttf") format("truetype"), url("/font/Pretendard-Bold.svg#svgFontName") format("svg");
+  src: url("../../src/font/Pretendard-Bold.woff2") format("woff2"), url("../../src/font/Pretendard-Bold.woff") format("woff"), url("../../src/font/Pretendard-Bold.ttf") format("truetype"), url("../../src/font/Pretendard-Bold.svg#svgFontName") format("svg");
 }
 body {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", "Pretendard";
-  color: #333;
+  line-height: 1.5;
+  color: #fff;
   width: 100%;
   overflow-x: hidden;
 }
@@ -116,7 +117,7 @@ a {
 .main_contents .title_h2 {
   font-size: 40px;
   font-weight: 700;
-  color: #000;
+  color: #fff;
   line-height: 1.5;
 }
 .main_contents > section {
@@ -124,6 +125,7 @@ a {
   min-height: 100vh;
   padding: 80px;
   box-sizing: border-box;
+  background: #222;
 }
 
 .intro {
@@ -153,7 +155,7 @@ a {
   transform: translate(0, -50%);
   font-size: 24px;
   font-weight: 400;
-  color: #000;
+  color: #fff;
   line-height: 1.5;
 }
 .intro .right_side .flex_row {
@@ -180,11 +182,11 @@ a {
 .intro .right_side .flex_row dd a {
   font-size: 18px;
   font-weight: 400;
-  color: #000;
+  color: #fff;
   line-height: 32px;
 }
 
-.profile {
+.about {
   background: #efefef;
   display: flex;
   flex-direction: row;
@@ -192,13 +194,37 @@ a {
   align-items: flex-start;
   justify-content: center;
 }
-.profile .left_side {
+.about .left_side {
   flex: 1 0 45%;
 }
-.profile .right_side {
+.about .right_side {
   flex: 1 0 55%;
 }
-.profile dl {
+.about .type div + div {
+  margin-top: 56px;
+}
+.about .type dt {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 32px;
+}
+.resume {
+  background: #efefef;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+.resume .left_side {
+  flex: 1 0 45%;
+}
+.resume .right_side {
+  flex: 1 0 55%;
+}
+.resume dl {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -206,14 +232,14 @@ a {
   justify-content: center;
   gap: 40px 80px;
 }
-.profile dl > div {
+.resume dl > div {
   flex: 1 0 calc(50% - 40px);
 }
-.profile dl dt {
+.resume dl dt {
   font-weight: 700;
   font-size: 18px;
 }
-.profile dl dd {
+.resume dl dd {
   font-size: 18px;
   margin-top: 16px;
   line-height: 32px;
@@ -223,16 +249,16 @@ a {
   align-items: center;
   justify-content: space-between;
 }
-.profile dl dd span {
+.resume dl dd span {
   font-size: 14px;
   font-weight: 400;
   color: #ddd;
   line-height: 1.5;
 }
-.profile ul {
+.resume ul {
   width: 100%;
 }
-.profile ul li {
+.resume ul li {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
