@@ -22,16 +22,6 @@
   font-weight: 700;
   src: url("../../src/font/Pretendard-Bold.woff2") format("woff2"), url("../../src/font/Pretendard-Bold.woff") format("woff"), url("../../src/font/Pretendard-Bold.ttf") format("truetype"), url("../../src/font/Pretendard-Bold.svg#svgFontName") format("svg");
 }
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Montserrat", "Pretendard";
-  line-height: 1.5;
-  color: #fff;
-  width: 100%;
-  overflow-x: hidden;
-}
-
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
@@ -64,6 +54,16 @@ button {
 
 a {
   text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", "Pretendard";
+  line-height: 1.5;
+  color: #fff;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .hidden {
@@ -200,16 +200,20 @@ a {
 .about .right_side {
   flex: 1 0 55%;
 }
-.about .type div + div {
+.about .stack div + div {
   margin-top: 56px;
 }
-.about .type dt {
+.about .stack dt {
   font-size: 24px;
   font-weight: 700;
   color: #fff;
   line-height: 1;
   margin-bottom: 32px;
 }
+.about .stack dd {
+  word-break: keep-all;
+}
+
 .resume {
   background: #efefef;
   display: flex;

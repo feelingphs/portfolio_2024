@@ -3,6 +3,7 @@
 @import "_font";
 @import "_var";
 @import "_mixins";
+@import "_base";
 
 // common
 body{
@@ -15,33 +16,7 @@ body{
     //min-width:1920px;
     overflow-x:hidden;
 }
-h1, h2, h3, h4, h5, h6{
-    margin:0;
-}
-p{
-    margin:0;
-    padding:0;
-}
-dl, dt, dd{
-    margin:0;
-    padding:0;
-}
-ul, li{
-    padding:0;
-    margin:0;
-}
-li{
-    list-style-type:none;
-}
-button{
-    background:none;
-    border:0;
-    padding:0;
-    margin:0;
-}
-a{
-    text-decoration:none;
-}
+
 
 
 .hidden{
@@ -161,7 +136,7 @@ a{
     .right_side{
         flex:1 0 55%;
     }
-    .type{
+    .stack{
         div{
             + div{
                 margin-top:56px;
@@ -172,7 +147,7 @@ a{
             margin-bottom:32px;
         }
         dd{
-
+            word-break:keep-all;
         }
     }
 }
