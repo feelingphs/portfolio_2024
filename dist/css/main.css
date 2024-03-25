@@ -149,7 +149,7 @@ body {
   align-items: flex-start;
   justify-content: center;
 }
-.intro .right_side .text_identity {
+.intro .right_side .point {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
@@ -197,6 +197,24 @@ body {
 .about .left_side {
   flex: 1 0 45%;
 }
+.about .tag_list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.about .tag_list li {
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid #0cc570;
+  font-size: 14px;
+  font-weight: 400;
+  color: #0cc570;
+  line-height: 1;
+}
 .about .right_side {
   flex: 1 0 55%;
 }
@@ -208,14 +226,45 @@ body {
   font-weight: 700;
   color: #fff;
   line-height: 1;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 .about .stack dd {
   word-break: keep-all;
 }
+.about .stack_list li {
+  text-indent: -5px;
+  margin-left: 10px;
+}
+.about .stack_list li::before {
+  content: "-";
+  display: inline-block;
+  margin-right: 4px;
+}
+.about .stack_list li + li {
+  margin-top: 4px;
+}
+.about .stack_icon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-top: 16px;
+}
+.about .stack_icon li {
+  border: 1px solid #0cc570;
+  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  color: #0cc570;
+  line-height: 24px;
+}
 
 .resume {
-  background: #efefef;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -246,7 +295,6 @@ body {
 .resume dl dd {
   font-size: 18px;
   margin-top: 16px;
-  line-height: 32px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -258,6 +306,13 @@ body {
   font-weight: 400;
   color: #ddd;
   line-height: 1.5;
+}
+.resume dl dd .type {
+  flex: 1;
+  margin-left: 16px;
+}
+.resume dl dd + dd {
+  margin-top: 4px;
 }
 .resume ul {
   width: 100%;

@@ -99,7 +99,7 @@ body{
         .year{
             
         }
-        .text_identity{
+        .point{
             position: absolute;
             top: 50%;
             transform: translate(0, -50%);
@@ -133,6 +133,18 @@ body{
     .left_side{
         flex:1 0 45%;
     }
+    .tag_list{
+        margin-top:40px;
+        @include flex-row(center, start, wrap){
+            gap:8px;
+        };
+        li{
+            padding:8px 16px;
+            border-radius:30px;
+            border:1px solid $pri;
+            @include font(14px, 400, $pri, 1);
+        }
+    }
     .right_side{
         flex:1 0 55%;
     }
@@ -144,15 +156,43 @@ body{
         }
         dt{
             @include font(24px, 700, $white, 1);
-            margin-bottom:32px;
+            margin-bottom:24px;
         }
         dd{
             word-break:keep-all;
         }
+        &_list{
+            li{
+                text-indent:-5px;
+                margin-left:10px;
+                &::before{
+                    content:'-';
+                    display:inline-block;
+                    margin-right:4px;
+
+                }
+                & + li{
+                    margin-top:4px;
+                }
+            }
+        }
+        &_icon{
+            @include flex-row(center, start){
+                gap:8px;
+            };
+            margin-top:16px;
+            li{
+                border:1px solid $pri;
+                border-radius:6px;
+                width: 24px;
+                height: 24px;
+                text-align: center;
+                @include font(12px, 400, $pri, 24px);
+            }
+        }
     }
 }
 .resume{
-    background:#efefef;
     @include flex-row(start);
     .left_side{
         flex:1 0 45%;
@@ -174,10 +214,16 @@ body{
         dd{
             font-size: 18px;
             margin-top: 16px;
-            line-height: 32px;
             @include flex-row(center, between, wrap);
             span{
                 @include font(14px, 400, $gray02, 1.5);
+            }
+            .type{
+                flex:1;
+                margin-left:16px;
+            }
+            & + dd{
+                margin-top:4px;
             }
         }
     }
