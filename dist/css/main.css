@@ -127,6 +127,9 @@ body {
   box-sizing: border-box;
   background: #222;
 }
+.main_contents .pin-spacer {
+  background: #222;
+}
 
 .intro {
   background: #FEFEFE;
@@ -351,6 +354,30 @@ body {
   display: block;
   width: 100%;
   height: 100%;
+}
+.works_thehyundai .work_img {
+  background: url("/dist/images/thumb_thehyundai.jpg");
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.works_hyundaimotors_sg .work_img {
+  background: url("/dist/images/thumb_hyundaimotors_sg.jpg");
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.works_theamall .work_img {
+  background: url("/dist/images/thumb_theamall.jpg");
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .footer {
