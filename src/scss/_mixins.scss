@@ -99,19 +99,18 @@
     animation: $animation $duration $method $times;
 }
 
-@mixin mobile{
-    @media (min-width:$breakpoint-mobile) and (max-width:$breakpoint-tablet){
+@mixin desktop{
+    @media (min-width:$breakpoint-desktop){
         @content;
     }
 }
-
 @mixin tablet{
     @media (min-width:$breakpoint-tablet) and (max-width:$breakpoint-desktop){
         @content;
     }
 }
-@mixin desktop{
-    @media (min-width:$breakpoint-desktop){
+@mixin mobile{
+    @media (min-width:$breakpoint-mobile) and (max-width:$breakpoint-tablet){
         @content;
     }
 }

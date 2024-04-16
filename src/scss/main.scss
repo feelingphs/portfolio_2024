@@ -68,10 +68,12 @@ body{
         margin-bottom:24px;
     }
     .title_h1{
-        font-size:68px;
-        font-weight:bold;
+        @include font(68px, 700, $white, 1.5);
         span{
             display:block;
+        }
+        @include mobile{
+            @include font(3rem, 700, $white, 1.5);
         }
     }
     .title_h2{
@@ -83,6 +85,10 @@ body{
         padding:80px;
         box-sizing:border-box;
         background:$black;
+        @include mobile{
+            padding:0 20px;
+            @include flex-column;
+        }
     }
     .pin-spacer{
         background:$black;

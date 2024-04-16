@@ -109,10 +109,20 @@ body {
 }
 .main_contents .title_h1 {
   font-size: 68px;
-  font-weight: bold;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.5;
 }
 .main_contents .title_h1 span {
   display: block;
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .main_contents .title_h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+  }
 }
 .main_contents .title_h2 {
   font-size: 40px;
@@ -126,6 +136,16 @@ body {
   padding: 80px;
   box-sizing: border-box;
   background: #222;
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .main_contents > section {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .main_contents .pin-spacer {
   background: #222;
