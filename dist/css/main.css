@@ -87,17 +87,82 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.header .logo span {
+.header .logo {
   display: inline-block;
-  width: 48px;
-  height: 48px;
-  font-size: 24px;
+  font-size: 14px;
   font-weight: 400;
-  border: 1px solid #111;
-  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
   text-align: center;
-  line-height: 48px;
-  box-sizing: border-box;
+  padding: 4px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  position: relative;
+  transition: ease-in-out 1s;
+}
+.header .logo span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  height: 0%;
+  background: #fff;
+  transition: ease-in-out 0.5s;
+  transition-delay: 1.5s;
+}
+.header .logo span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 0%;
+  background: #fff;
+  transition: ease-in-out 0.5s;
+  transition-delay: 0.5s;
+}
+.header .logo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: #fff;
+  transition: ease-in-out 0.5s;
+}
+.header .logo::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0%;
+  height: 1px;
+  background: #fff;
+  transition: ease-in-out 0.5s;
+  transition-delay: 1s;
+}
+.header .logo:hover {
+  color: #fff;
+}
+.header .logo:hover span::after {
+  height: 100%;
+  transition-delay: 0;
+}
+.header .logo:hover span::before {
+  height: 100%;
+}
+.header .logo:hover::after {
+  width: 100%;
+}
+.header .logo:hover::before {
+  width: 100%;
+}
+.header .year {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
 }
 
 .main_contents {
@@ -111,7 +176,7 @@ body {
   font-size: 68px;
   font-weight: 700;
   color: #fff;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 .main_contents .title_h1 span {
   display: block;
@@ -172,7 +237,7 @@ body {
   align-items: flex-start;
   justify-content: center;
 }
-.intro .right_side .point {
+.intro .right_side .slogan {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
@@ -230,7 +295,7 @@ body {
   gap: 8px;
 }
 .about .tag_list li {
-  padding: 8px 16px;
+  padding: 4px 8px;
   border-radius: 30px;
   border: 1px solid #0cc570;
   font-size: 14px;
