@@ -17,8 +17,6 @@ body{
     overflow-x:hidden;
 }
 
-
-
 .hidden{
     width:1px;
     height:1px;
@@ -127,6 +125,7 @@ body{
     }
 }
 
+// 컨텐츠
 .main_contents{
     width:100%;
     margin-top:-80px;
@@ -160,6 +159,8 @@ body{
         background:$black;
     }
 }
+
+// 인트로
 .intro{
     background:#FEFEFE;
     @include flex-row(center, start);
@@ -199,11 +200,13 @@ body{
         }
     }
 }
+
+// 소개
 .about{
     background:#efefef;
     @include flex-row(start);
     .left_side{
-        flex:1 0 45%;
+        flex:1;
     }
     .tag_list{
         margin-top:40px;
@@ -218,48 +221,67 @@ body{
         }
     }
     .right_side{
-        flex:1 0 55%;
+        flex:1;
     }
-    .stack{
-        div{
-            + div{
-                margin-top:56px;
-            }
+}
+.stack{
+    div{
+        + div{
+            margin-top:56px;
         }
-        dt{
-            @include font(24px, 700, $white, 1);
-            margin-bottom:24px;
-        }
-        dd{
-            word-break:keep-all;
-        }
-        &_list{
-            li{
-                text-indent:-5px;
-                margin-left:10px;
-                &::before{
-                    content:'-';
-                    display:inline-block;
-                    margin-right:4px;
+    }
+    dt{
+        @include font(24px, 700, $white, 1);
+        margin-bottom:24px;
+    }
+    dd{
+        word-break:keep-all;
+    }
+    &_list{
+        > li{
+            text-indent:-5px;
+            margin-left:10px;
+            &::before{
+                content:'-';
+                display:inline-block;
+                margin-right:4px;
 
-                }
-                & + li{
-                    margin-top:4px;
-                }
+            }
+            & + li{
+                margin-top:4px;
             }
         }
-        &_icon{
-            @include flex-row(center, start){
-                gap:8px;
-            };
-            margin-top:16px;
-            li{
-                border:1px solid $pri;
-                border-radius:6px;
-                width: 24px;
-                height: 24px;
-                text-align: center;
-                @include font(12px, 400, $pri, 24px);
+    }
+    &_design_icon{
+        margin-top:16px;
+        @include flex-row(center, start){
+            gap:8px;
+        };
+        li{
+            border:1px solid $pri;
+            border-radius:6px;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            box-sizing:border-box;
+            text-indent:0;
+            @include font(12px, 400, $pri, 24px);
+        }
+    }
+    &_develop_icon{
+        @include flex-row(start, start);
+        gap:16px;
+        svg{
+            width:24px;
+            height:24px;
+            vertical-align:middle;
+        }
+        path{
+            stroke:$pri;
+        }
+        li{
+            span{
+                @include font(12px, 400, $pri, 1);
             }
         }
     }
@@ -306,13 +328,14 @@ body{
         }
     }
 }
+
+// 작업한 프로젝트
 .works{
     &_list{
         width:100%;
         @include flex-row(center, start);
         gap:40px;
         margin-top:40px;
-        margin-left:100px;
     }
     &_item{
         width:40vw;

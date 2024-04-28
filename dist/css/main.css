@@ -283,7 +283,7 @@ body {
   justify-content: center;
 }
 .about .left_side {
-  flex: 1 0 45%;
+  flex: 1;
 }
 .about .tag_list {
   margin-top: 40px;
@@ -297,59 +297,84 @@ body {
 .about .tag_list li {
   padding: 4px 8px;
   border-radius: 30px;
-  border: 1px solid #0cc570;
+  border: 1px solid #BAF266;
   font-size: 14px;
   font-weight: 400;
-  color: #0cc570;
+  color: #BAF266;
   line-height: 1;
 }
 .about .right_side {
-  flex: 1 0 55%;
+  flex: 1;
 }
-.about .stack div + div {
+
+.stack div + div {
   margin-top: 56px;
 }
-.about .stack dt {
+.stack dt {
   font-size: 24px;
   font-weight: 700;
   color: #fff;
   line-height: 1;
   margin-bottom: 24px;
 }
-.about .stack dd {
+.stack dd {
   word-break: keep-all;
 }
-.about .stack_list li {
+.stack_list > li {
   text-indent: -5px;
   margin-left: 10px;
 }
-.about .stack_list li::before {
+.stack_list > li::before {
   content: "-";
   display: inline-block;
   margin-right: 4px;
 }
-.about .stack_list li + li {
+.stack_list > li + li {
   margin-top: 4px;
 }
-.about .stack_icon {
+.stack_design_icon {
+  margin-top: 16px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
-  margin-top: 16px;
 }
-.about .stack_icon li {
-  border: 1px solid #0cc570;
+.stack_design_icon li {
+  border: 1px solid #BAF266;
   border-radius: 6px;
   width: 24px;
   height: 24px;
   text-align: center;
+  box-sizing: border-box;
+  text-indent: 0;
   font-size: 12px;
   font-weight: 400;
-  color: #0cc570;
+  color: #BAF266;
   line-height: 24px;
+}
+.stack_develop_icon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.stack_develop_icon svg {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+.stack_develop_icon path {
+  stroke: #BAF266;
+}
+.stack_develop_icon li span {
+  font-size: 12px;
+  font-weight: 400;
+  color: #BAF266;
+  line-height: 1;
 }
 
 .resume {
@@ -422,7 +447,6 @@ body {
   justify-content: flex-start;
   gap: 40px;
   margin-top: 40px;
-  margin-left: 100px;
 }
 .works_item {
   width: 40vw;
