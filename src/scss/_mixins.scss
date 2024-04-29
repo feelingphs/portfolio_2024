@@ -5,6 +5,7 @@
     font-weight:$weight;
     color:$color;
     line-height:$line;
+    letter-spacing:-1px;
     @content;
 }
 

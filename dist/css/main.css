@@ -81,11 +81,14 @@ body {
   left: 0;
   width: 100%;
   height: 80px;
-  display: flex;
   padding: 0 80px;
   box-sizing: border-box;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
+  justify-content: space-between;
+  z-index: 10;
 }
 .header .logo {
   display: inline-block;
@@ -93,6 +96,7 @@ body {
   font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.5;
+  letter-spacing: -1px;
   text-align: center;
   padding: 4px 16px;
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -163,6 +167,7 @@ body {
   font-weight: 400;
   color: #fff;
   line-height: 1;
+  letter-spacing: -1px;
 }
 
 .main_contents {
@@ -177,6 +182,7 @@ body {
   font-weight: 700;
   color: #fff;
   line-height: 1.2;
+  letter-spacing: -1px;
 }
 .main_contents .title_h1 span {
   display: block;
@@ -187,6 +193,7 @@ body {
     font-weight: 700;
     color: #fff;
     line-height: 1.5;
+    letter-spacing: -1px;
   }
 }
 .main_contents .title_h2 {
@@ -194,6 +201,7 @@ body {
   font-weight: 700;
   color: #fff;
   line-height: 1.5;
+  letter-spacing: -1px;
 }
 .main_contents > section {
   width: 100%;
@@ -245,6 +253,7 @@ body {
   font-weight: 400;
   color: #fff;
   line-height: 1.5;
+  letter-spacing: -1px;
 }
 .intro .right_side .flex_row {
   width: 100%;
@@ -272,6 +281,7 @@ body {
   font-weight: 400;
   color: #fff;
   line-height: 32px;
+  letter-spacing: -1px;
 }
 
 .about {
@@ -286,7 +296,7 @@ body {
   flex: 1;
 }
 .about .tag_list {
-  margin-top: 40px;
+  margin-top: 16px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -302,6 +312,7 @@ body {
   font-weight: 400;
   color: #BAF266;
   line-height: 1;
+  letter-spacing: -1px;
 }
 .about .right_side {
   flex: 1;
@@ -315,6 +326,7 @@ body {
   font-weight: 700;
   color: #fff;
   line-height: 1;
+  letter-spacing: -1px;
   margin-bottom: 24px;
 }
 .stack dd {
@@ -330,7 +342,7 @@ body {
   margin-right: 4px;
 }
 .stack_list > li + li {
-  margin-top: 4px;
+  margin-top: 8px;
 }
 .stack_design_icon {
   margin-top: 16px;
@@ -353,6 +365,7 @@ body {
   font-weight: 400;
   color: #BAF266;
   line-height: 24px;
+  letter-spacing: -1px;
 }
 .stack_develop_icon {
   display: flex;
@@ -361,20 +374,32 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 16px;
+  margin-left: 4px;
+  margin-top: 4px;
 }
 .stack_develop_icon svg {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   vertical-align: middle;
 }
 .stack_develop_icon path {
   stroke: #BAF266;
+}
+.stack_develop_icon li {
+  text-indent: 0;
 }
 .stack_develop_icon li span {
   font-size: 12px;
   font-weight: 400;
   color: #BAF266;
   line-height: 1;
+  letter-spacing: -1px;
+}
+.stack_develop_icon .svn_icon {
+  border: 1px solid #BAF266;
+  padding: 4px;
+  border-radius: 6px;
+  font-size: 10px;
 }
 
 .resume {
@@ -419,6 +444,7 @@ body {
   font-weight: 400;
   color: #ddd;
   line-height: 1.5;
+  letter-spacing: -1px;
 }
 .resume dl dd .type {
   flex: 1;
@@ -450,47 +476,107 @@ body {
 }
 .works_item {
   width: 40vw;
-  aspect-ratio: 1920/1200;
   flex: 1 0 auto;
-}
-.works_item:nth-child(even) {
-  background: #ddd;
-}
-.works_item:nth-child(odd) {
-  background: #ccc;
 }
 .works_item a {
   display: block;
   width: 100%;
   height: 100%;
 }
-.works_thehyundai .work_img {
-  background: url("../images/thumb_thehyundai.jpg");
+.works .work_img {
   display: block;
   width: 100%;
   height: 100%;
+  position: relative;
+  aspect-ratio: 600/350;
+}
+.works .work_name {
+  display: block;
+  margin-top: 24px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -1px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.works .work_period {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -1px;
+  opacity: 0.7;
+}
+.works .work_keyword {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1d;
+  letter-spacing: -1px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-top: 16px;
+}
+.works .work_keyword span + span {
+  position: relative;
+}
+.works .work_keyword span + span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #fff;
+}
+.works .flag {
+  font-size: 14px;
+  font-weight: 700;
+  color: #BAF266;
+  line-height: 1.5;
+  letter-spacing: -1px;
+  border: 2px solid #BAF266;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 30px;
+  text-align: center;
+  border-radius: 4px;
+}
+.works_thehyundai .work_img {
+  background: url("../images/thumb_thehyundai.jpg");
   background-position: center center;
   background-repeat: no-repeat;
 }
 .works_hyundaimotors_sg .work_img {
   background: url("../images/thumb_hyundaimotors_sg.jpg");
-  display: block;
-  width: 100%;
-  height: 100%;
   background-position: center center;
   background-repeat: no-repeat;
 }
 .works_theamall .work_img {
   background: url("../images/thumb_theamall.jpg");
-  display: block;
-  width: 100%;
-  height: 100%;
   background-position: center center;
   background-repeat: no-repeat;
 }
 
 .footer {
   width: 100%;
-  height: 40px;
+  padding: 16px 0;
   text-align: center;
+  background: #222;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.5;
+  letter-spacing: -1px;
 }/*# sourceMappingURL=main.css.map */
