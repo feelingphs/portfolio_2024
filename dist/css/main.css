@@ -483,6 +483,12 @@ body {
   width: 100%;
   height: 100%;
 }
+.works_item a span {
+  transition: ease-in-out 0.3s;
+}
+.works_item a:hover span {
+  color: #BAF266;
+}
 .works .work_img {
   display: block;
   width: 100%;

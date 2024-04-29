@@ -352,6 +352,14 @@ body{
             display:block;
             width:100%;
             height:100%;
+            span{
+                transition:ease-in-out 0.3s;
+            }
+            &:hover{
+                span{
+                    color:$pri;
+                }
+            }
         }
     }
     .work_img{
