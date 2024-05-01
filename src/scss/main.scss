@@ -10,11 +10,13 @@ body{
     margin:0;
     padding:0;
     font-family:'Montserrat', 'Pretendard';
-    line-height:1.5;
-    color:$white;
+    @include font(16px, 400, $white, 1.5);
     width:100%;
-    //min-width:1920px;
+    min-width:1440px;
     overflow-x:hidden;
+    @include mobile{
+        min-width:auto;
+    }
 }
 
 .hidden{
@@ -42,6 +44,10 @@ body{
     box-sizing:border-box;
     @include flex-row(center, between);
     z-index:10;
+    @include mobile{
+        padding:0 20px;
+        height:60px;
+    }
     .logo{
         display:inline-block;
         @include font(14px, 400, rgba(255, 255, 255, 0.8), 1.5);
@@ -128,8 +134,16 @@ body{
 .main_contents{
     width:100%;
     margin-top:-80px;
+    @include mobile{
+        margin-top:-60px;
+    }
     h2{
         margin-bottom:24px;
+        @include font(24px, 700, $white, 1.2);
+        @include mobile{
+            margin-bottom:16px;
+            @include font(1rem, 700, $white, 1.2);
+        }
     }
     .title_h1{
         @include font(68px, 700, $white, 1.2);
@@ -137,11 +151,14 @@ body{
             display:block;
         }
         @include mobile{
-            @include font(3rem, 700, $white, 1.5);
+            @include font(2rem, 700, $white, 1.5);
         }
     }
     .title_h2{
         @include font(40px, 700, $white, 1.5);
+        @include mobile{
+            @include font(1.4rem, 700, $white, 1.5);
+        }
     }
     > section{
         width:100%;
@@ -150,8 +167,15 @@ body{
         box-sizing:border-box;
         background:$black;
         @include mobile{
-            padding:0 20px;
-            @include flex-column;
+            padding: 60px 20px;
+            @include flex-column(start, center);
+        }
+    }
+    .about{
+
+        @include mobile{
+            display:block;
+            padding:0;
         }
     }
     .pin-spacer{
@@ -166,34 +190,62 @@ body{
     .title_h1{
         flex:1;
         margin:auto;
+        @include mobile{
+            margin:0;
+        }
     }
     .right_side{
         flex:1;
         height:calc(100vh - 160px);
         @include flex-column(start);
+        @include mobile{
+            width:100%;
+        }
         .slogan{
             position: absolute;
             top: 50%;
             transform: translate(0, -50%);
             @include font(24px, 400, $white, 1.5);
+            @include mobile{
+                @include font(1.2rem, 400, $white, 1.5);
+            }
         }
         .flex_row{
             width:100%;
             margin-top:auto;
             @include flex-row(start);
+            @include mobile{
+                @include flex-column(start);
+                gap:24px;
+            }
             > div{
                 flex:1;
+                @include mobile{
+                    width:100%;
+                    @include flex-row(start, start);
+                    gap:24px;
+                }
             }
             dt{
-                font-weight:700;
-                font-size:18px;
+                @include font(18px, 700, $white, 1.5);
+                @include mobile{
+                    flex-basis:20%;
+                    @include font(1rem, 700, $white, 1.5);
+                }
             }
             dd{
                 font-size:18px;
                 margin-top:16px;
                 line-height:32px;
+                @include mobile{
+                    margin-top:0;
+                    @include font(0.875rem, 400, $white, 1.5);
+                }
                 a{
                     @include font(18px, 400, $white, 32px);
+                    @include mobile{
+                        @include font(0.875rem, 400, $white, 1.5);
+                    }
                 }
             }
         }
@@ -206,12 +258,21 @@ body{
     @include flex-row(start);
     .left_side{
         flex:1;
+        @include mobile{
+            height: 100vh;
+            padding: 60px 20px;
+            box-sizing:border-box;
+            @include flex-column(start, start);
+        }
     }
     .tag_list{
         margin-top:16px;
         @include flex-row(center, start, wrap){
             gap:8px;
         };
+        @include mobile{
+            margin-top:auto;
+        }
         li{
             padding:4px 8px;
             border-radius:30px;
@@ -221,6 +282,27 @@ body{
     }
     .right_side{
         flex:1;
+    }
+    .design{
+        @include mobile{
+            padding:60px 20px;
+            box-sizing:border-box;
+            height:100vh;
+        }
+    }
+    .front_end{
+        @include mobile{
+            padding:60px 20px;
+            box-sizing:border-box;
+            height:100vh;
+        }
+    }
+    .work_style{
+        @include mobile{
+            padding:60px 20px;
+            box-sizing:border-box;
+            height:100vh;
+        }
     }
 }
 .stack{
@@ -283,7 +365,8 @@ body{
         li{
             text-indent:0;
             span{
-                @include font(12px, 400, $pri, 1);
+                margin-left:4px;
+                @include font(14px, 400, $pri, 1);
             }
         }
         .svn_icon{
@@ -348,6 +431,9 @@ body{
     &_item{
         width:40vw;
         flex:1 0 auto;
+        @include mobile{
+            width:60vw;
+        }
         a{
             display:block;
             width:100%;
@@ -374,16 +460,27 @@ body{
         margin-top:24px;
         @include font(18px, 700, $white, 1);
         @include flex-row(center, between);
+        @include mobile{
+            @include flex-column(start, start);
+            gap:8px;
+            @include font(0.875rem, 700, $white, 1);
+        }
     }
     .work_period{
         @include font(14px, 400, $white, 1);
         opacity:0.7;
+        @include mobile{
+            @include font(0.75rem, 400, $white, 1);
+        }
     }
     .work_keyword{
-        @include font(16px, 400, $white, 1d);
+        @include font(16px, 400, $white, 1);
         @include flex-row(center, start){
             gap:16px;
         };
+        @include mobile{
+            @include font(0.75rem, 400, $white, 1);
+        }
         margin-top:16px;
         span{
             & + span{
@@ -416,6 +513,9 @@ body{
             background:url("../images/thumb_thehyundai.jpg");
             background-position: center center;
             background-repeat: no-repeat;
+            @include mobile{
+                background-size:180%;
+            }
         }
     }
     &_hyundaimotors_sg{
@@ -423,6 +523,9 @@ body{
             background:url("../images/thumb_hyundaimotors_sg.jpg");
             background-position: center center;
             background-repeat: no-repeat;
+            @include mobile{
+                background-size:180%;
+            }
         }
     }
     &_theamall{
@@ -430,6 +533,9 @@ body{
             background:url("../images/thumb_theamall.jpg");
             background-position: center center;
             background-repeat: no-repeat;
+            @include mobile{
+                background-size:180%;
+            }
         }
     }
 }

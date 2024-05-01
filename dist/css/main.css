@@ -60,10 +60,19 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", "Pretendard";
-  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 400;
   color: #fff;
+  line-height: 1.5;
+  letter-spacing: -1px;
   width: 100%;
+  min-width: 1440px;
   overflow-x: hidden;
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  body {
+    min-width: auto;
+  }
 }
 
 .hidden {
@@ -89,6 +98,12 @@ body {
   align-items: center;
   justify-content: space-between;
   z-index: 10;
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .header {
+    padding: 0 20px;
+    height: 60px;
+  }
 }
 .header .logo {
   display: inline-block;
@@ -174,8 +189,28 @@ body {
   width: 100%;
   margin-top: -80px;
 }
+@media (min-width: 280px) and (max-width: 758px) {
+  .main_contents {
+    margin-top: -60px;
+  }
+}
 .main_contents h2 {
   margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .main_contents h2 {
+    margin-bottom: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -1px;
+  }
 }
 .main_contents .title_h1 {
   font-size: 68px;
@@ -189,7 +224,7 @@ body {
 }
 @media (min-width: 280px) and (max-width: 758px) {
   .main_contents .title_h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
     color: #fff;
     line-height: 1.5;
@@ -203,6 +238,15 @@ body {
   line-height: 1.5;
   letter-spacing: -1px;
 }
+@media (min-width: 280px) and (max-width: 758px) {
+  .main_contents .title_h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+    letter-spacing: -1px;
+  }
+}
 .main_contents > section {
   width: 100%;
   min-height: 100vh;
@@ -212,12 +256,18 @@ body {
 }
 @media (min-width: 280px) and (max-width: 758px) {
   .main_contents > section {
-    padding: 0 20px;
+    padding: 60px 20px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+  }
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .main_contents .about {
+    display: block;
+    padding: 0;
   }
 }
 .main_contents .pin-spacer {
@@ -236,6 +286,11 @@ body {
   flex: 1;
   margin: auto;
 }
+@media (min-width: 280px) and (max-width: 758px) {
+  .intro .title_h1 {
+    margin: 0;
+  }
+}
 .intro .right_side {
   flex: 1;
   height: calc(100vh - 160px);
@@ -244,6 +299,11 @@ body {
   flex-wrap: nowrap;
   align-items: flex-start;
   justify-content: center;
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .intro .right_side {
+    width: 100%;
+  }
 }
 .intro .right_side .slogan {
   position: absolute;
@@ -255,6 +315,15 @@ body {
   line-height: 1.5;
   letter-spacing: -1px;
 }
+@media (min-width: 280px) and (max-width: 758px) {
+  .intro .right_side .slogan {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.5;
+    letter-spacing: -1px;
+  }
+}
 .intro .right_side .flex_row {
   width: 100%;
   margin-top: auto;
@@ -264,17 +333,61 @@ body {
   align-items: flex-start;
   justify-content: center;
 }
+@media (min-width: 280px) and (max-width: 758px) {
+  .intro .right_side .flex_row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+  }
+}
 .intro .right_side .flex_row > div {
   flex: 1;
 }
+@media (min-width: 280px) and (max-width: 758px) {
+  .intro .right_side .flex_row > div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+}
 .intro .right_side .flex_row dt {
-  font-weight: 700;
   font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.5;
+  letter-spacing: -1px;
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .intro .right_side .flex_row dt {
+    flex-basis: 20%;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+    letter-spacing: -1px;
+  }
 }
 .intro .right_side .flex_row dd {
   font-size: 18px;
   margin-top: 16px;
   line-height: 32px;
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .intro .right_side .flex_row dd {
+    margin-top: 0;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.5;
+    letter-spacing: -1px;
+  }
 }
 .intro .right_side .flex_row dd a {
   font-size: 18px;
@@ -282,6 +395,15 @@ body {
   color: #fff;
   line-height: 32px;
   letter-spacing: -1px;
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .intro .right_side .flex_row dd a {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.5;
+    letter-spacing: -1px;
+  }
 }
 
 .about {
@@ -295,6 +417,18 @@ body {
 .about .left_side {
   flex: 1;
 }
+@media (min-width: 280px) and (max-width: 758px) {
+  .about .left_side {
+    height: 100vh;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
 .about .tag_list {
   margin-top: 16px;
   display: flex;
@@ -303,6 +437,11 @@ body {
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .about .tag_list {
+    margin-top: auto;
+  }
 }
 .about .tag_list li {
   padding: 4px 8px;
@@ -316,6 +455,27 @@ body {
 }
 .about .right_side {
   flex: 1;
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .about .design {
+    padding: 60px 20px;
+    box-sizing: border-box;
+    height: 100vh;
+  }
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .about .front_end {
+    padding: 60px 20px;
+    box-sizing: border-box;
+    height: 100vh;
+  }
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .about .work_style {
+    padding: 60px 20px;
+    box-sizing: border-box;
+    height: 100vh;
+  }
 }
 
 .stack div + div {
@@ -389,7 +549,8 @@ body {
   text-indent: 0;
 }
 .stack_develop_icon li span {
-  font-size: 12px;
+  margin-left: 4px;
+  font-size: 14px;
   font-weight: 400;
   color: #BAF266;
   line-height: 1;
@@ -478,6 +639,11 @@ body {
   width: 40vw;
   flex: 1 0 auto;
 }
+@media (min-width: 280px) and (max-width: 758px) {
+  .works_item {
+    width: 60vw;
+  }
+}
 .works_item a {
   display: block;
   width: 100%;
@@ -510,6 +676,21 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+@media (min-width: 280px) and (max-width: 758px) {
+  .works .work_name {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+}
 .works .work_period {
   font-size: 14px;
   font-weight: 400;
@@ -518,11 +699,20 @@ body {
   letter-spacing: -1px;
   opacity: 0.7;
 }
+@media (min-width: 280px) and (max-width: 758px) {
+  .works .work_period {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+}
 .works .work_keyword {
   font-size: 16px;
   font-weight: 400;
   color: #fff;
-  line-height: 1d;
+  line-height: 1;
   letter-spacing: -1px;
   display: flex;
   flex-direction: row;
@@ -531,6 +721,15 @@ body {
   justify-content: flex-start;
   gap: 16px;
   margin-top: 16px;
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .works .work_keyword {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
 }
 .works .work_keyword span + span {
   position: relative;
@@ -564,15 +763,30 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
+@media (min-width: 280px) and (max-width: 758px) {
+  .works_thehyundai .work_img {
+    background-size: 180%;
+  }
+}
 .works_hyundaimotors_sg .work_img {
   background: url("../images/thumb_hyundaimotors_sg.jpg");
   background-position: center center;
   background-repeat: no-repeat;
 }
+@media (min-width: 280px) and (max-width: 758px) {
+  .works_hyundaimotors_sg .work_img {
+    background-size: 180%;
+  }
+}
 .works_theamall .work_img {
   background: url("../images/thumb_theamall.jpg");
   background-position: center center;
   background-repeat: no-repeat;
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .works_theamall .work_img {
+    background-size: 180%;
+  }
 }
 
 .footer {
