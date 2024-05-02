@@ -226,31 +226,7 @@
     <script src="./src/js/libs/gsap.min.js"></script>
     <script src="./src/js/libs/ScrollTrigger.min.js"></script>
     <script src="./src/js/libs/ScrollToPlugin.min.js"></script>
-    <script>
-        const horizontalBox = document.querySelector(".works");
-        let items = gsap.utils.toArray(".works_list")
-
-        items.forEach((container, i) => {
-            let localItems = container.querySelectorAll(".works_item"),
-            distance = () => {
-                let lastItemBounds = localItems[localItems.length-1].getBoundingClientRect(),
-                    containerBounds = container.getBoundingClientRect();
-                return Math.max(0, lastItemBounds.right - containerBounds.right);
-            };
-            gsap.to(horizontalBox, {
-                x: () => -distance() - 200,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: horizontalBox,
-                    start: "top top",
-                    pinnedContainer: horizontalBox,
-                    end: () => "+=" + distance(),
-                    pin: horizontalBox,
-                    scrub: true,
-                    invalidateOnRefresh: true
-                }
-            })
-        });
-    </script>
+    <script src="./src/js/main.js"></script>
+    
 </body>
 </html>
