@@ -4,11 +4,11 @@ let items = gsap.utils.toArray(".works_list")
 
 items.forEach((container, i) => {
     let localItems = container.querySelectorAll(".works_item"),
-    distance = () => {
-        let lastItemBounds = localItems[localItems.length-1].getBoundingClientRect(),
-            containerBounds = container.getBoundingClientRect();
-        return Math.max(0, lastItemBounds.right - containerBounds.right);
-    };
+        distance = () => {
+            let lastItemBounds = localItems[localItems.length - 1].getBoundingClientRect(),
+                containerBounds = container.getBoundingClientRect();
+            return Math.max(0, lastItemBounds.right - containerBounds.right);
+        };
     gsap.to(horizontalBox, {
         x: () => -distance() - 200,
         ease: "none",
@@ -23,3 +23,17 @@ items.forEach((container, i) => {
         }
     })
 });
+
+
+
+
+const section = document.querySelectorAll("section");
+const sectionHeight = section[0].getBoundingClientRect().height;
+const nextSection = section[1].getBoundingClientRect().top;
+
+window.addEventListener("wheel", function (e) {
+    console.log(e.deltaY);
+
+    
+
+})
