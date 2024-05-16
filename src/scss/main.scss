@@ -10,10 +10,11 @@ body{
     margin:0;
     padding:0;
     font-family:'Montserrat', 'Pretendard';
-    @include font(16px, 400, $white, 1.5);
     width:100%;
     min-width:1440px;
     overflow-x:hidden;
+    word-break:keep-all;
+    @include font(16px, 400, $white, 1.5);
     @include mobile{
         min-width:auto;
     }
@@ -138,12 +139,7 @@ body{
         margin-top:-60px;
     }
     h2{
-        margin-bottom:24px;
-        @include font(24px, 700, $white, 1.2);
-        @include mobile{
-            margin-bottom:16px;
-            @include font(1rem, 700, $white, 1.2);
-        }
+        @include hidden;
     }
     .title_h1{
         @include font(68px, 700, $white, 1.2);
@@ -155,9 +151,9 @@ body{
         }
     }
     .title_h2{
-        @include font(40px, 700, $white, 1.5);
+        @include font(48px, 700, $white, 1.5);
         @include mobile{
-            @include font(1.4rem, 700, $white, 1.5);
+            @include font(1.5rem, 700, $white, 1.5);
         }
     }
     > section{
@@ -169,13 +165,6 @@ body{
         @include mobile{
             padding: 60px 20px;
             @include flex-column(start, center);
-        }
-    }
-    .about{
-
-        @include mobile{
-            display:block;
-            padding:0;
         }
     }
     .pin-spacer{
@@ -256,11 +245,14 @@ body{
 .about{
     background:#efefef;
     @include flex-row(start);
+    @include mobile{
+        //@include flex-column;
+        display:block;
+        padding:0;
+    }
     .left_side{
         flex:1;
         @include mobile{
-            height: 100vh;
-            padding: 60px 20px;
             box-sizing:border-box;
             @include flex-column(start, start);
         }
@@ -271,57 +263,72 @@ body{
             gap:8px;
         };
         @include mobile{
-            margin-top:auto;
+            margin-top:16px;
         }
         li{
-            padding:4px 8px;
+            padding:8px 12px;
             border-radius:30px;
             border:1px solid $pri;
-            @include font(14px, 400, $pri, 1);
+            @include font(16px, 400, $pri, 1);
+            @include mobile{
+                @include font(0.875rem, 400, $pri, 1);
+                padding:4px 8px;
+            }
         }
     }
     .right_side{
         flex:1;
+        margin:auto;
+        @include mobile{
+            flex:0;
+        }
     }
     .design{
         @include mobile{
-            padding:60px 20px;
-            box-sizing:border-box;
-            height:100vh;
         }
     }
     .front_end{
         @include mobile{
-            padding:60px 20px;
-            box-sizing:border-box;
-            height:100vh;
         }
     }
     .work_style{
         @include mobile{
-            padding:60px 20px;
             box-sizing:border-box;
-            height:100vh;
+            margin-top:auto;
         }
     }
 }
 .stack{
     div{
         + div{
-            margin-top:56px;
+            margin-top:80px;
+            @include mobile{
+                margin-top:40px;
+            }
         }
     }
     dt{
-        @include font(24px, 700, $white, 1);
-        margin-bottom:24px;
+        @include font(32px, 700, $white, 1);
+        margin-bottom:32px;
+        @include mobile{
+            @include font(1rem, 700, $white, 1);
+            margin-bottom:16px;
+        }
     }
     dd{
         word-break:keep-all;
+        @include mobile{
+            @include font(1rem, 400, $white, 1);
+        }
     }
     &_list{
         > li{
             text-indent:-5px;
             margin-left:10px;
+            @include font(18px, 400, $white, 1.5);
+            @include mobile{
+                @include font(1rem, 400, $white, 1.5);
+            }
             &::before{
                 content:'-';
                 display:inline-block;
@@ -329,34 +336,34 @@ body{
 
             }
             & + li{
-                margin-top:8px;
+                margin-top:12px;
             }
         }
     }
     &_design_icon{
         margin-top:16px;
         @include flex-row(center, start){
-            gap:8px;
+            gap:12px;
         };
         li{
             border:1px solid $pri;
             border-radius:6px;
-            width: 24px;
-            height: 24px;
+            width: 32px;
+            height: 32px;
             text-align: center;
             box-sizing:border-box;
             text-indent:0;
-            @include font(12px, 400, $pri, 24px);
+            @include font(16px, 400, $pri, 32px);
         }
     }
     &_develop_icon{
         @include flex-row(start, start);
-        gap:16px;
+        gap:24px;
         margin-left: 4px;
-        margin-top: 4px;
+        margin-top: 8px;
         svg{
-            width:20px;
-            height:20px;
+            width:30px;
+            height:30px;
             vertical-align:middle;
         }
         path{
@@ -366,7 +373,7 @@ body{
             text-indent:0;
             span{
                 margin-left:4px;
-                @include font(14px, 400, $pri, 1);
+                @include font(16px, 400, $pri, 1);
             }
         }
         .svn_icon{
@@ -541,7 +548,57 @@ body{
 }
 
 .contact{
-    
+    @include flex-row(start);
+    .left_side{
+        flex:1 0 45%;
+    }
+    .right_side{
+        flex:1 0 55%;
+        margin:auto;
+        span{
+            display:block;
+            text-align:center;
+            @include font(24px, 400, $white, 1.5);
+        }
+        .message01{
+            @include font(40px, 700, $white, 1.5);
+            @include mobile{
+                @include font(1.25rem, 700, $white, 1.5);
+            }
+        }
+        .message02{
+            @include font(24px, 400, $white, 1.5);
+            margin-top:16px;
+
+            @include mobile{
+                @include font(1rem, 400, $white, 1.5);
+                margin-top:8px;
+            }
+        }
+        .mail{
+            @include font(40px, 700, $white, 1.5);
+            margin-top:24px;
+            @include mobile{
+                @include font(1.25rem, 700, $white, 1.5);
+                margin-top:16px;
+            }
+        }
+    }
+
+}
+
+// 애니메이션
+.animation{
+    opacity:0;
+    &.bottom{
+        transform:translate3d(0, 120px, 0);
+        transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+    }
+    &.is_active{
+        opacity:1;
+        transform:translate3d(0, 0, 0);
+        transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+    }
 }
 
 // footer

@@ -1,3 +1,30 @@
+document.addEventListener('DOMContentLoaded', function() {
+    animation[0].classList.add('is_active');
+    animation[1].classList.add('is_active');
+})
+
+document.addEventListener('scroll', function() {
+    // 애니메이션
+    isActive();
+})
+
+const windowHeight = window.innerHeight;
+const animation = document.querySelectorAll('.animation');
+
+function isActive() {
+    animation.forEach(function(e, i){
+        const animationPosition = animation[i].getBoundingClientRect().top;
+        console.log(animationPosition);
+
+        if(animationPosition - windowHeight <= -100) {
+            animation[i].classList.add('is_active');
+        } else if(animationPosition - windowHeight > -100) {
+            animation[i].classList.remove('is_active');
+        }
+
+    })
+}
+
 // work 가로스크롤
 const horizontalBox = document.querySelector(".works");
 let items = gsap.utils.toArray(".works_list")
@@ -37,3 +64,6 @@ window.addEventListener("wheel", function (e) {
     
 
 })
+
+
+
