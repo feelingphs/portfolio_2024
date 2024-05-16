@@ -557,8 +557,10 @@ body{
         margin:auto;
         span{
             display:block;
-            text-align:center;
             @include font(24px, 400, $white, 1.5);
+            @include mobile{
+                text-align:center;
+            }
         }
         .message01{
             @include font(40px, 700, $white, 1.5);
@@ -607,5 +609,8 @@ body{
     padding: 16px 0;
     text-align:center;
     background:$black;
-    @include font(14px, 400, $white, 1.5);
+    @include font(16px, 400, $white, 1.5);
+    @include mobile{
+        @include font(0.875rem, 400, $white, 1.5);
+    }
 }

@@ -835,12 +835,16 @@ body {
 }
 .contact .right_side span {
   display: block;
-  text-align: center;
   font-size: 24px;
   font-weight: 400;
   color: #fff;
   line-height: 1.5;
   letter-spacing: -1px;
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .contact .right_side span {
+    text-align: center;
+  }
 }
 .contact .right_side .message01 {
   font-size: 40px;
@@ -913,9 +917,18 @@ body {
   padding: 16px 0;
   text-align: center;
   background: #222;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: #fff;
   line-height: 1.5;
   letter-spacing: -1px;
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .footer {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.5;
+    letter-spacing: -1px;
+  }
 }/*# sourceMappingURL=main.css.map */
