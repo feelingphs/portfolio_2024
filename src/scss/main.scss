@@ -46,8 +46,9 @@ body{
     @include flex-row(center, between);
     z-index:10;
     @include mobile{
-        padding:0 20px;
-        height:60px;
+        // padding:0 20px;
+        // height:60px;
+        display:none;
     }
     .logo{
         display:inline-block;
@@ -128,6 +129,9 @@ body{
     }
     .year{
         @include font(16px, 400, $white, 1);
+        @include mobile{
+            @include font(0.875rem, 400, $white, 1);
+        }
     }
 }
 
@@ -136,7 +140,7 @@ body{
     width:100%;
     margin-top:-80px;
     @include mobile{
-        margin-top:-60px;
+        margin-top:0;
     }
     h2{
         @include hidden;
@@ -163,8 +167,13 @@ body{
         box-sizing:border-box;
         background:$black;
         @include mobile{
-            padding: 60px 20px;
+            padding: 10vh 20px 20px;
             @include flex-column(start, center);
+        }
+        &.works{
+            @include mobile{
+                display:block;
+            }
         }
     }
     .pin-spacer{
@@ -181,6 +190,7 @@ body{
         margin:auto;
         @include mobile{
             margin:0;
+            flex:0;
         }
     }
     .right_side{
@@ -197,6 +207,9 @@ body{
             @include font(24px, 400, $white, 1.5);
             @include mobile{
                 @include font(1.2rem, 400, $white, 1.5);
+                top: 0;
+                transform: translate(0, -50%);
+                margin-top: 7vh;
             }
         }
         .flex_row{
@@ -205,7 +218,7 @@ body{
             @include flex-row(start);
             @include mobile{
                 @include flex-column(start);
-                gap:24px;
+                gap:16px;
             }
             > div{
                 flex:1;
@@ -218,7 +231,7 @@ body{
             dt{
                 @include font(18px, 700, $white, 1.5);
                 @include mobile{
-                    flex-basis:20%;
+                    flex-basis:25%;
                     @include font(1rem, 700, $white, 1.5);
                 }
             }
@@ -279,6 +292,7 @@ body{
     .right_side{
         flex:1;
         margin:auto;
+        width:100%;
         @include mobile{
             flex:0;
         }
@@ -327,7 +341,7 @@ body{
             margin-left:10px;
             @include font(18px, 400, $white, 1.5);
             @include mobile{
-                @include font(1rem, 400, $white, 1.5);
+                @include font(0.875rem, 400, $white, 1.5);
             }
             &::before{
                 content:'-';
@@ -337,6 +351,9 @@ body{
             }
             & + li{
                 margin-top:12px;
+                @include mobile{
+                    margin-top:4px;
+                }
             }
         }
     }
@@ -345,6 +362,10 @@ body{
         @include flex-row(center, start){
             gap:12px;
         };
+        @include mobile{
+            gap:8px;
+            margin-top:8px;
+        }
         li{
             border:1px solid $pri;
             border-radius:6px;
@@ -354,17 +375,30 @@ body{
             box-sizing:border-box;
             text-indent:0;
             @include font(16px, 400, $pri, 32px);
+            @include mobile{
+                width: 24px;
+                height: 24px;
+                @include font(0.8rem, 400, $pri, 24px);
+            }
         }
     }
     &_develop_icon{
         @include flex-row(start, start);
-        gap:24px;
+        gap:8px 24px;
         margin-left: 4px;
         margin-top: 8px;
+        @include mobile{
+            flex-wrap: wrap;
+            gap:8px 16px;
+        }
         svg{
             width:30px;
             height:30px;
             vertical-align:middle;
+            @include mobile{
+                width:20px;
+                height:20px;
+            }
         }
         path{
             stroke:$pri;
@@ -374,6 +408,9 @@ body{
             span{
                 margin-left:4px;
                 @include font(16px, 400, $pri, 1);
+                @include mobile{
+                    @include font(0.8rem, 400, $pri, 1);
+                }
             }
         }
         .svn_icon{
@@ -429,17 +466,21 @@ body{
 
 // 작업한 프로젝트
 .works{
+    padding:0;
     &_list{
         width:100%;
         @include flex-row(center, start);
         gap:40px;
         margin-top:40px;
+        @include mobile{
+            @include flex-column(center, start);
+        }
     }
     &_item{
         width:40vw;
         flex:1 0 auto;
         @include mobile{
-            width:60vw;
+            width:100%;
         }
         a{
             display:block;
@@ -468,7 +509,7 @@ body{
         @include font(18px, 700, $white, 1);
         @include flex-row(center, between);
         @include mobile{
-            @include flex-column(start, start);
+            @include flex-row(start, between);
             gap:8px;
             @include font(0.875rem, 700, $white, 1);
         }
@@ -548,13 +589,14 @@ body{
 }
 
 .contact{
-    @include flex-row(start);
-    .left_side{
-        flex:1 0 45%;
+    @include flex-column(center, center);
+    gap: 40px;
+    text-align:center;
+    min-height:calc(100vh - 80px) !important;
+    @include mobile{
+        align-items:center !important;
     }
-    .right_side{
-        flex:1 0 55%;
-        margin:auto;
+    .contents{
         span{
             display:block;
             @include font(24px, 400, $white, 1.5);

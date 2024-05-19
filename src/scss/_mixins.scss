@@ -8,7 +8,7 @@
     clip: rect(1px, 1px, 1px, 1px);
     clip-path: inset(50%);
     display: inline-block;
-    margin:-1px;
+    position:absolute;
 }
 
 @mixin font($size, $weight, $color, $line){
