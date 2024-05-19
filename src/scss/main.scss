@@ -378,7 +378,7 @@ body{
             @include mobile{
                 width: 24px;
                 height: 24px;
-                @include font(0.8rem, 400, $pri, 24px);
+                @include font(0.75rem, 400, $pri, 24px);
             }
         }
     }
@@ -409,7 +409,7 @@ body{
                 margin-left:4px;
                 @include font(16px, 400, $pri, 1);
                 @include mobile{
-                    @include font(0.8rem, 400, $pri, 1);
+                    @include font(0.75rem, 400, $pri, 1);
                 }
             }
         }
@@ -595,6 +595,7 @@ body{
     min-height:calc(100vh - 80px) !important;
     @include mobile{
         align-items:center !important;
+        min-height:calc(100vh - 68px) !important;
     }
     .contents{
         span{
@@ -631,20 +632,6 @@ body{
 
 }
 
-// 애니메이션
-.animation{
-    opacity:0;
-    &.bottom{
-        transform:translate3d(0, 120px, 0);
-        transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
-    }
-    &.is_active{
-        opacity:1;
-        transform:translate3d(0, 0, 0);
-        transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
-    }
-}
-
 // footer
 .footer{
     width:100%;
@@ -653,6 +640,23 @@ body{
     background:$black;
     @include font(16px, 400, $white, 1.5);
     @include mobile{
-        @include font(0.875rem, 400, $white, 1.5);
+        @include font(0.75rem, 400, $white, 1.5);
+    }
+}
+
+// 애니메이션
+.animation{
+    opacity:0;
+    &.bottom{
+        transform:translate3d(0, 120px, 0);
+        transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+        @include mobile{
+            transform:translate3d(0, 60px, 0);
+        }
+    }
+    &.is_active{
+        opacity:1;
+        transform:translate3d(0, 0, 0);
+        transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
     }
 }

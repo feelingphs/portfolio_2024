@@ -590,7 +590,7 @@ body {
   .stack_design_icon li {
     width: 24px;
     height: 24px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 400;
     color: #BAF266;
     line-height: 24px;
@@ -640,7 +640,7 @@ body {
 }
 @media (min-width: 280px) and (max-width: 758px) {
   .stack_develop_icon li span {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 400;
     color: #BAF266;
     line-height: 1;
@@ -905,6 +905,7 @@ body {
 @media (min-width: 280px) and (max-width: 758px) {
   .contact {
     align-items: center !important;
+    min-height: calc(100vh - 68px) !important;
   }
 }
 .contact .contents span {
@@ -973,19 +974,6 @@ body {
   }
 }
 
-.animation {
-  opacity: 0;
-}
-.animation.bottom {
-  transform: translate3d(0, 120px, 0);
-  transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
-}
-.animation.is_active {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-  transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
-}
-
 .footer {
   width: 100%;
   padding: 16px 0;
@@ -999,10 +987,28 @@ body {
 }
 @media (min-width: 280px) and (max-width: 758px) {
   .footer {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 400;
     color: #fff;
     line-height: 1.5;
     letter-spacing: -1px;
   }
+}
+
+.animation {
+  opacity: 0;
+}
+.animation.bottom {
+  transform: translate3d(0, 120px, 0);
+  transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+}
+@media (min-width: 280px) and (max-width: 758px) {
+  .animation.bottom {
+    transform: translate3d(0, 60px, 0);
+  }
+}
+.animation.is_active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
 }/*# sourceMappingURL=main.css.map */
