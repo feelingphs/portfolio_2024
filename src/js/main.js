@@ -64,21 +64,19 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) || (/
 const section = document.querySelectorAll("section");
 
 window.addEventListener("wheel", function (e) {
-
-    section.forEach(function(item, index){
-        // const prevSection = section[index-1].getBoundingClientRect().top;
-        // const nextSection = section[index+1].getBoundingClientRect().top;
-
-        console.log(index+1);
+    
+    section.forEach(function(item, i){
+        const currentScroll = window.scrollY;
+        const height = window.innerHeight;
     
         // 스크롤 내릴 때
         if(e.deltaY > 0){
-            this.window.scrollTo({left:0, top:nextSection, behavior:'smooth'});
+            this.window.scrollTo({left:0, top:currentScroll+height, behavior:'smooth'});
         }
     
         // 스크롤 올릴 떄
         if(e.deltaY < 0){
-            this.window.scrollTo({left:0, top:prevSection, behavior:'smooth'});
+            this.window.scrollTo({left:0, top:currentScroll-height, behavior:'smooth'});
         }
     })
     
