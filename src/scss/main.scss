@@ -12,11 +12,33 @@ body{
     font-family:'Montserrat', 'Pretendard';
     width:100%;
     min-width:1440px;
-    overflow-x:hidden;
     word-break:keep-all;
     @include font(16px, 400, $white, 1.5);
     @include mobile{
         min-width:auto;
+    }
+    
+    // 스크롤바 전체
+    &::-webkit-scrollbar{
+        width:4px;
+        height:4px;
+    }
+
+    // 스크롤바 막대
+    &::-webkit-scrollbar-thumb{
+        background:rgba(186, 242, 102, 0.5);
+        opacity:0.2;
+        border-radius:3px;
+        &:hover{
+            background:$pri;
+        }
+    }
+
+    // 스크롤바 트랙
+    &::-webkit-scrollbar-track{
+        background:#333;
+        width:4px;
+        height:4px;
     }
 }
 
@@ -27,11 +49,6 @@ body{
     margin:-1px;
     overflow:hidden;
     clip:rect(0 0 0 0);
-}
-
-
-#wrap{
-    
 }
 
 // header
@@ -178,6 +195,7 @@ body{
     }
     .pin-spacer{
         background:$black;
+        overflow:hidden !important;
     }
 }
 

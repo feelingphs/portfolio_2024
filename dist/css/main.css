@@ -62,7 +62,6 @@ body {
   font-family: "Montserrat", "Pretendard";
   width: 100%;
   min-width: 1440px;
-  overflow-x: hidden;
   word-break: keep-all;
   font-size: 16px;
   font-weight: 400;
@@ -74,6 +73,23 @@ body {
   body {
     min-width: auto;
   }
+}
+body::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+body::-webkit-scrollbar-thumb {
+  background: rgba(186, 242, 102, 0.5);
+  opacity: 0.2;
+  border-radius: 3px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #BAF266;
+}
+body::-webkit-scrollbar-track {
+  background: #333;
+  width: 4px;
+  height: 4px;
 }
 
 .hidden {
@@ -272,6 +288,7 @@ body {
 }
 .main_contents .pin-spacer {
   background: #222;
+  overflow: hidden !important;
 }
 
 .intro {
