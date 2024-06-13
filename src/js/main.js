@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    animation[0].classList.add('is_active');
-    animation[1].classList.add('is_active');
+    isActive();
 })
 
 document.addEventListener('scroll', function() {
@@ -11,6 +10,7 @@ document.addEventListener('scroll', function() {
 const windowHeight = window.innerHeight;
 const animation = document.querySelectorAll('.animation');
 
+// 애니메이션
 function isActive() {
     animation.forEach(function(e, i){
         const animationPosition = animation[i].getBoundingClientRect().top;
@@ -42,7 +42,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) || (/
                 return Math.max(0, lastItemBounds.right - containerBounds.right);
             };
 
-        gsap.to(horizontalBox, {
+        let scrollEvent = gsap.to(horizontalBox, {
             x: () => -distance() - 160,
             ease: "none",
             scrollTrigger: {
@@ -65,21 +65,27 @@ const section = document.querySelectorAll("section");
     
 section.forEach(function(item, i){
 
-    item.addEventListener("wheel", function (e) {
-        e.preventDefault();
+    if(i == 3) {
 
-        let moveTop = window.scrollY;
-
-        // 스크롤 내릴 때
-        if(e.deltaY > 0){
-            moveTop += section[(i+1)].getBoundingClientRect().top;
-        }
+    } else {
+        item.addEventListener("wheel", function (e) {
+            e.preventDefault();
     
-        // 스크롤 올릴 떄
-        if(e.deltaY < 0){
-            moveTop += section[(i-1)].getBoundingClientRect().top;
-        }
+            let moveTop = window.scrollY;
+    
+            // 스크롤 내릴 때
+            if(e.deltaY > 0){
+                moveTop += section[(i+1)].getBoundingClientRect().top;
+            }
+        
+            // 스크롤 올릴 떄
+            if(e.deltaY < 0){
+                moveTop += section[(i-1)].getBoundingClientRect().top;
+            }
+    
+            window.scrollTo({top: moveTop, left: 0, behavior: "smooth"});
+        })
+    }
 
-        window.scrollTo({top: moveTop, left: 0, behavior: "smooth"});
-    })
+
 })
