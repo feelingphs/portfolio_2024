@@ -17,6 +17,10 @@ body{
     @include mobile{
         min-width:auto;
     }
+
+    &.scrollLock{
+        overflow:hidden;
+    }
     
     // 스크롤바 전체
     &::-webkit-scrollbar{
@@ -619,6 +623,118 @@ body{
             background:$white;
             @include font(40px, 700, $black, 1.5);
             @include flex-row(center, center)
+        }
+    }
+}
+
+.layer_detail{
+    .detail_item{
+        display:none;
+        width:100vw;
+        height:100vh;
+        background:$black;
+        padding:80px;
+        box-sizing:border-box;
+        overflow:auto;
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:10;
+        flex-direction:column;
+        &.open{
+            display:flex;
+        }
+        .title{
+            font-size:24px;
+            font-weight:700;
+            color:$pri;
+            span{
+                font-size:18px;
+                font-weight:700;
+                display:block;
+                color:#ddd;
+            }
+        }
+        
+    }
+    .disclaimer{
+        margin-top:24px;
+        font-size:16px;
+    }
+    .meta{
+        display:flex;
+        gap:24px;
+        border:1px solid #555;
+        background:#333;
+        padding:8px;
+        border-radius:16px;
+        margin-top:30px;
+        dt{
+            font-size:14px;
+            font-weight:700;
+            color:$pri;
+        }
+        dd{
+            margin-top:4px;
+            font-size:14px;
+        }
+    }
+    .contrib{
+        margin-top:40px;
+        .title{
+            font-size:16px;
+        }
+        .list{
+            li{
+                padding-left:8px;
+                &::before{
+                    content:'';
+                    display:inline-block;
+                    width:4px;
+                    height:4px;
+                    border-radius:50%;
+                    background:$pri;
+                    vertical-align: middle;
+                    margin-left: -8px;
+                    margin-right:8px;
+                }
+            }
+        }
+    }
+    .detail_images{
+        display:flex;
+        gap:80px;
+        align-items: flex-start;
+        margin-top:40px;
+        p{
+            width:0;
+            flex:2;
+            &.mb{
+                flex:1;
+            }
+        }
+        img{
+            width:100%;
+        }
+    }
+    .btn_area{
+        position:fixed;
+        left:0;
+        bottom:0;
+        width:100%;
+        padding:120px;
+        padding-bottom:40px;
+        box-sizing:border-box;
+        background:#222;
+        background: linear-gradient(0deg, rgba(34, 34, 34, 1) 0%, rgba(34, 34, 34, 1) 50%, rgba(34, 34, 34, 0) 100%);
+        @include flex-column(center, center);
+        a{
+            display:flex;
+            width: 160px;
+            height: 40px;
+            background: #888;
+            color:#fff;
+            @include flex-column(center, center);
         }
     }
 }
